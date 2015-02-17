@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A344DC191A93F59400D040F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A344DC181A93F59400D040F8 /* AppDelegate.swift */; };
+		A344DC1B1A93F59400D040F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A344DC1A1A93F59400D040F8 /* ViewController.swift */; };
+		A344DC1E1A93F59400D040F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A344DC1C1A93F59400D040F8 /* Main.storyboard */; };
+		A344DC201A93F59400D040F8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A344DC1F1A93F59400D040F8 /* Images.xcassets */; };
+		A344DC231A93F59400D040F8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A344DC211A93F59400D040F8 /* LaunchScreen.xib */; };
+		A344DC2F1A93F59400D040F8 /* Meta_tationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A344DC2E1A93F59400D040F8 /* Meta_tationTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A344DC291A93F59400D040F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A344DC0B1A93F59400D040F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A344DC121A93F59400D040F8;
+			remoteInfo = "Meta-tation";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A344DC131A93F59400D040F8 /* Meta-tation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meta-tation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A344DC171A93F59400D040F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A344DC181A93F59400D040F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A344DC1A1A93F59400D040F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A344DC1D1A93F59400D040F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A344DC1F1A93F59400D040F8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A344DC221A93F59400D040F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		A344DC281A93F59400D040F8 /* Meta-tationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Meta-tationTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A344DC2D1A93F59400D040F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A344DC2E1A93F59400D040F8 /* Meta_tationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta_tationTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A344DC101A93F59400D040F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A344DC251A93F59400D040F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A344DC0A1A93F59400D040F8 = {
+			isa = PBXGroup;
+			children = (
+				A344DC151A93F59400D040F8 /* Meta-tation */,
+				A344DC2B1A93F59400D040F8 /* Meta-tationTests */,
+				A344DC141A93F59400D040F8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A344DC141A93F59400D040F8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A344DC131A93F59400D040F8 /* Meta-tation.app */,
+				A344DC281A93F59400D040F8 /* Meta-tationTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A344DC151A93F59400D040F8 /* Meta-tation */ = {
+			isa = PBXGroup;
+			children = (
+				A344DC181A93F59400D040F8 /* AppDelegate.swift */,
+				A344DC1A1A93F59400D040F8 /* ViewController.swift */,
+				A344DC1C1A93F59400D040F8 /* Main.storyboard */,
+				A344DC1F1A93F59400D040F8 /* Images.xcassets */,
+				A344DC211A93F59400D040F8 /* LaunchScreen.xib */,
+				A344DC161A93F59400D040F8 /* Supporting Files */,
+			);
+			path = "Meta-tation";
+			sourceTree = "<group>";
+		};
+		A344DC161A93F59400D040F8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A344DC171A93F59400D040F8 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A344DC2B1A93F59400D040F8 /* Meta-tationTests */ = {
+			isa = PBXGroup;
+			children = (
+				A344DC2E1A93F59400D040F8 /* Meta_tationTests.swift */,
+				A344DC2C1A93F59400D040F8 /* Supporting Files */,
+			);
+			path = "Meta-tationTests";
+			sourceTree = "<group>";
+		};
+		A344DC2C1A93F59400D040F8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A344DC2D1A93F59400D040F8 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A344DC121A93F59400D040F8 /* Meta-tation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A344DC321A93F59400D040F8 /* Build configuration list for PBXNativeTarget "Meta-tation" */;
+			buildPhases = (
+				A344DC0F1A93F59400D040F8 /* Sources */,
+				A344DC101A93F59400D040F8 /* Frameworks */,
+				A344DC111A93F59400D040F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Meta-tation";
+			productName = "Meta-tation";
+			productReference = A344DC131A93F59400D040F8 /* Meta-tation.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A344DC271A93F59400D040F8 /* Meta-tationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A344DC351A93F59400D040F8 /* Build configuration list for PBXNativeTarget "Meta-tationTests" */;
+			buildPhases = (
+				A344DC241A93F59400D040F8 /* Sources */,
+				A344DC251A93F59400D040F8 /* Frameworks */,
+				A344DC261A93F59400D040F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A344DC2A1A93F59400D040F8 /* PBXTargetDependency */,
+			);
+			name = "Meta-tationTests";
+			productName = "Meta-tationTests";
+			productReference = A344DC281A93F59400D040F8 /* Meta-tationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A344DC0B1A93F59400D040F8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Tangent Circles";
+				TargetAttributes = {
+					A344DC121A93F59400D040F8 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					A344DC271A93F59400D040F8 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = A344DC121A93F59400D040F8;
+					};
+				};
+			};
+			buildConfigurationList = A344DC0E1A93F59400D040F8 /* Build configuration list for PBXProject "Meta-tation" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A344DC0A1A93F59400D040F8;
+			productRefGroup = A344DC141A93F59400D040F8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A344DC121A93F59400D040F8 /* Meta-tation */,
+				A344DC271A93F59400D040F8 /* Meta-tationTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A344DC111A93F59400D040F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A344DC1E1A93F59400D040F8 /* Main.storyboard in Resources */,
+				A344DC231A93F59400D040F8 /* LaunchScreen.xib in Resources */,
+				A344DC201A93F59400D040F8 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A344DC261A93F59400D040F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A344DC0F1A93F59400D040F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A344DC1B1A93F59400D040F8 /* ViewController.swift in Sources */,
+				A344DC191A93F59400D040F8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A344DC241A93F59400D040F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A344DC2F1A93F59400D040F8 /* Meta_tationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A344DC2A1A93F59400D040F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A344DC121A93F59400D040F8 /* Meta-tation */;
+			targetProxy = A344DC291A93F59400D040F8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A344DC1C1A93F59400D040F8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A344DC1D1A93F59400D040F8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A344DC211A93F59400D040F8 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A344DC221A93F59400D040F8 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A344DC301A93F59400D040F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A344DC311A93F59400D040F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A344DC331A93F59400D040F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Meta-tation/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A344DC341A93F59400D040F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Meta-tation/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A344DC361A93F59400D040F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Meta-tationTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Meta-tation.app/Meta-tation";
+			};
+			name = Debug;
+		};
+		A344DC371A93F59400D040F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Meta-tationTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Meta-tation.app/Meta-tation";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A344DC0E1A93F59400D040F8 /* Build configuration list for PBXProject "Meta-tation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A344DC301A93F59400D040F8 /* Debug */,
+				A344DC311A93F59400D040F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A344DC321A93F59400D040F8 /* Build configuration list for PBXNativeTarget "Meta-tation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A344DC331A93F59400D040F8 /* Debug */,
+				A344DC341A93F59400D040F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A344DC351A93F59400D040F8 /* Build configuration list for PBXNativeTarget "Meta-tationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A344DC361A93F59400D040F8 /* Debug */,
+				A344DC371A93F59400D040F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A344DC0B1A93F59400D040F8 /* Project object */;
+}
