@@ -1,25 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Meta_tation" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lu5-Cn-RBy">
+                                <rect key="frame" x="1" y="35" width="318" height="473"/>
+                            </mapView>
+                            <button opaque="NO" alpha="0.69999999999999973" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lpd-A1-3Ac">
+                                <rect key="frame" x="1" y="508" width="318" height="60"/>
+                                <color key="backgroundColor" red="0.82830768669999999" green="1" blue="0.98561181450000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="gradientBlue.png">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Start Session">
+                                            <attributes>
+                                                <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="startSession:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="naa-pP-MdT"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lpd-A1-3Ac" firstAttribute="top" secondItem="lu5-Cn-RBy" secondAttribute="bottom" id="01A-nE-ZMj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lpd-A1-3Ac" secondAttribute="trailing" constant="-15" id="4b6-Am-mZO"/>
+                            <constraint firstItem="lpd-A1-3Ac" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-15" id="8Zi-mF-dGh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lu5-Cn-RBy" secondAttribute="trailing" constant="-15" id="Cof-EH-3aB"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="lpd-A1-3Ac" secondAttribute="bottom" id="EBy-f4-YwO"/>
+                            <constraint firstItem="lu5-Cn-RBy" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-15" id="jgm-Ri-abo"/>
+                            <constraint firstItem="lu5-Cn-RBy" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="15" id="m3a-OP-5Gb"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="lu5-Cn-RBy" secondAttribute="bottom" constant="60" id="tY8-XP-A1D"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="tsongaMap" destination="lu5-Cn-RBy" id="d4B-0L-vgM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="gradientBlue.png" width="675" height="606"/>
+    </resources>
 </document>

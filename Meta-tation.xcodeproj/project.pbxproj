@@ -13,6 +13,8 @@
 		A344DC201A93F59400D040F8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A344DC1F1A93F59400D040F8 /* Images.xcassets */; };
 		A344DC231A93F59400D040F8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A344DC211A93F59400D040F8 /* LaunchScreen.xib */; };
 		A344DC2F1A93F59400D040F8 /* Meta_tationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A344DC2E1A93F59400D040F8 /* Meta_tationTests.swift */; };
+		A344DC391A93F5A800D040F8 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A344DC381A93F5A800D040F8 /* SwiftyJSON.swift */; };
+		A344DC6F1A95BC6B00D040F8 /* gradientBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = A344DC6E1A95BC6B00D040F8 /* gradientBlue.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		A344DC281A93F59400D040F8 /* Meta-tationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Meta-tationTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A344DC2D1A93F59400D040F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A344DC2E1A93F59400D040F8 /* Meta_tationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta_tationTests.swift; sourceTree = "<group>"; };
+		A344DC381A93F5A800D040F8 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		A344DC6E1A95BC6B00D040F8 /* gradientBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gradientBlue.png; path = ../../../../../Desktop/gradientBlue.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,8 @@
 				A344DC181A93F59400D040F8 /* AppDelegate.swift */,
 				A344DC1A1A93F59400D040F8 /* ViewController.swift */,
 				A344DC1C1A93F59400D040F8 /* Main.storyboard */,
+				A344DC381A93F5A800D040F8 /* SwiftyJSON.swift */,
+				A344DC6E1A95BC6B00D040F8 /* gradientBlue.png */,
 				A344DC1F1A93F59400D040F8 /* Images.xcassets */,
 				A344DC211A93F59400D040F8 /* LaunchScreen.xib */,
 				A344DC161A93F59400D040F8 /* Supporting Files */,
@@ -194,6 +200,7 @@
 			files = (
 				A344DC1E1A93F59400D040F8 /* Main.storyboard in Resources */,
 				A344DC231A93F59400D040F8 /* LaunchScreen.xib in Resources */,
+				A344DC6F1A95BC6B00D040F8 /* gradientBlue.png in Resources */,
 				A344DC201A93F59400D040F8 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A344DC391A93F5A800D040F8 /* SwiftyJSON.swift in Sources */,
 				A344DC1B1A93F59400D040F8 /* ViewController.swift in Sources */,
 				A344DC191A93F59400D040F8 /* AppDelegate.swift in Sources */,
 			);
