@@ -20,35 +20,22 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lu5-Cn-RBy">
                                 <rect key="frame" x="1" y="35" width="318" height="473"/>
                             </mapView>
-                            <button opaque="NO" alpha="0.69999999999999973" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lpd-A1-3Ac">
-                                <rect key="frame" x="1" y="508" width="318" height="60"/>
-                                <color key="backgroundColor" red="0.82830768669999999" green="1" blue="0.98561181450000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" backgroundImage="gradientBlue.png">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Start Session">
-                                            <attributes>
-                                                <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ey0-Ty-YCs">
+                                <rect key="frame" x="0.0" y="268" width="320" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="Bha-z9-mz4"/>
+                                </constraints>
                                 <connections>
-                                    <action selector="startSession:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="naa-pP-MdT"/>
+                                    <segue destination="BDP-4p-eda" kind="embed" id="kvg-sc-yLh"/>
                                 </connections>
-                            </button>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lpd-A1-3Ac" firstAttribute="top" secondItem="lu5-Cn-RBy" secondAttribute="bottom" id="01A-nE-ZMj"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="lpd-A1-3Ac" secondAttribute="trailing" constant="-15" id="4b6-Am-mZO"/>
-                            <constraint firstItem="lpd-A1-3Ac" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-15" id="8Zi-mF-dGh"/>
+                            <constraint firstItem="ey0-Ty-YCs" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="4n6-e9-Sxp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ey0-Ty-YCs" secondAttribute="trailing" constant="-16" id="BWL-9M-dBC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lu5-Cn-RBy" secondAttribute="trailing" constant="-15" id="Cof-EH-3aB"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="lpd-A1-3Ac" secondAttribute="bottom" id="EBy-f4-YwO"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ey0-Ty-YCs" secondAttribute="bottom" id="a5N-cK-VoP"/>
                             <constraint firstItem="lu5-Cn-RBy" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-15" id="jgm-Ri-abo"/>
                             <constraint firstItem="lu5-Cn-RBy" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="15" id="m3a-OP-5Gb"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="lu5-Cn-RBy" secondAttribute="bottom" constant="60" id="tY8-XP-A1D"/>
@@ -56,11 +43,70 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="optionsContainerHeight" destination="Bha-z9-mz4" id="Bvq-HM-BIp"/>
                         <outlet property="tsongaMap" destination="lu5-Cn-RBy" id="d4B-0L-vgM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Options Container View Controller-->
+        <scene sceneID="vlJ-LF-FHM">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BDP-4p-eda" customClass="OptionsContainerViewController" customModule="Meta_tation" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UDX-Qy-8y4"/>
+                        <viewControllerLayoutGuide type="bottom" id="UKg-EH-RMG"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="xPj-7c-EnS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradientBlue.png" translatesAutoresizingMaskIntoConstraints="NO" id="JPn-BP-qf1">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qnM-yB-quY">
+                                <rect key="frame" x="114" y="17" width="92" height="30"/>
+                                <state key="normal" title="Start Session">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="expandOptionsContainer:" destination="BDP-4p-eda" eventType="touchUpInside" id="mAp-dc-dQV"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6La-Bv-GxR">
+                                <rect key="frame" x="16" y="97" width="288" height="29"/>
+                                <segments>
+                                    <segment title="Sitting"/>
+                                    <segment title="Moving"/>
+                                </segments>
+                            </segmentedControl>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" countDownDuration="15" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jL-G3-l6g">
+                                <rect key="frame" x="0.0" y="138" width="320" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="446596140.34848303">
+                                    <!--2015-02-25 22:29:00 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JPn-BP-qf1" firstAttribute="top" secondItem="UDX-Qy-8y4" secondAttribute="bottom" id="10S-EX-p4N"/>
+                            <constraint firstItem="qnM-yB-quY" firstAttribute="top" secondItem="UDX-Qy-8y4" secondAttribute="bottom" constant="17" id="BmB-RL-DrS"/>
+                            <constraint firstAttribute="trailing" secondItem="JPn-BP-qf1" secondAttribute="trailing" id="CSx-2E-6DV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qnM-yB-quY" secondAttribute="trailing" constant="98" id="Htl-f7-r4N"/>
+                            <constraint firstItem="UKg-EH-RMG" firstAttribute="top" secondItem="JPn-BP-qf1" secondAttribute="bottom" id="QIZ-WL-rkB"/>
+                            <constraint firstItem="6La-Bv-GxR" firstAttribute="trailing" secondItem="xPj-7c-EnS" secondAttribute="trailingMargin" id="bJG-2F-FSf"/>
+                            <constraint firstItem="6La-Bv-GxR" firstAttribute="top" secondItem="qnM-yB-quY" secondAttribute="bottom" constant="50" id="dT6-ye-fSp"/>
+                            <constraint firstItem="JPn-BP-qf1" firstAttribute="leading" secondItem="xPj-7c-EnS" secondAttribute="leading" id="jpw-eF-qTd"/>
+                            <constraint firstItem="6La-Bv-GxR" firstAttribute="leading" secondItem="xPj-7c-EnS" secondAttribute="leadingMargin" id="kxd-jE-tck"/>
+                            <constraint firstItem="qnM-yB-quY" firstAttribute="leading" secondItem="xPj-7c-EnS" secondAttribute="leadingMargin" constant="98" id="ky9-2H-snp"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ab1-yF-uXt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="178" y="736"/>
         </scene>
     </scenes>
     <resources>

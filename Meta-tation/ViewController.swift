@@ -13,10 +13,9 @@ import MapKit
 class ViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet var tsongaMap: MKMapView!
-    @IBAction func startSession(sender: AnyObject) {
-        actionSheetForSessionOptions()
-        
-    }
+
+
+    @IBOutlet var optionsContainerHeight: NSLayoutConstraint!
     
     var lat:CLLocationDegrees = 37.7836449
     var lng:CLLocationDegrees = -122.4091387
@@ -27,6 +26,8 @@ class ViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        optionsContainerHeight.constant = 63
         
         // Snippet for extracting JSON with SwiftyJSON
         let url = NSURL(string: "http://localhost:8003/meditators")
@@ -57,26 +58,13 @@ class ViewController: UIViewController, MKMapViewDelegate {
             tsongaMap.setRegion(region, animated: true)
         }
     }
-    func actionSheetForSessionOptions() {
-        let actionSheet: UIAlertController = UIAlertController(title: "Session settings", message: "the message", preferredStyle: .ActionSheet)
-        
-        let callActionHandler = { (action:UIAlertAction!) -> Void in
-            let alertMessage = UIAlertController(title: action.title, message: "Your session begins", preferredStyle: .Alert)
-            alertMessage.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-            self.presentViewController(alertMessage, animated: true, completion: nil)
-        }
-        
-        let moving: UIAlertAction = UIAlertAction(title: "Moving", style: .Default, handler:callActionHandler)
-        
-        let sitting: UIAlertAction = UIAlertAction(title: "Sitting", style: .Default, handler:callActionHandler)
-        
-        let timer: UIAlertAction = UIAlertAction(title: "Duration", style: .Destructive , handler:callActionHandler)
-        
-        actionSheet.addAction(moving)
-        actionSheet.addAction(sitting)
-        actionSheet.addAction(timer)
-        
-        presentViewController(actionSheet, animated: true, completion:nil)
+    
+    func expandContainerToShowOptions() {
+        println("Expanding")
+        self.optionsContainerHeight.constant = 300
+        UIView.animateWithDuration(0.4, delay: 0.0, options: .CurveEaseOut, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil) // Maybe do a little fun animation on complete
     }
     
     override func didReceiveMemoryWarning() {
