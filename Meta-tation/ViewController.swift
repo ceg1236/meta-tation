@@ -14,6 +14,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet var tsongaMap: MKMapView!
     @IBAction func startSession(sender: AnyObject) {
+        actionSheetForSessionOptions()
         
     }
     
@@ -56,7 +57,28 @@ class ViewController: UIViewController, MKMapViewDelegate {
             tsongaMap.setRegion(region, animated: true)
         }
     }
-
+    func actionSheetForSessionOptions() {
+        let actionSheet: UIAlertController = UIAlertController(title: "Session settings", message: "the message", preferredStyle: .ActionSheet)
+        
+        let callActionHandler = { (action:UIAlertAction!) -> Void in
+            let alertMessage = UIAlertController(title: action.title, message: "Your session begins", preferredStyle: .Alert)
+            alertMessage.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            self.presentViewController(alertMessage, animated: true, completion: nil)
+        }
+        
+        let moving: UIAlertAction = UIAlertAction(title: "Moving", style: .Default, handler:callActionHandler)
+        
+        let sitting: UIAlertAction = UIAlertAction(title: "Sitting", style: .Default, handler:callActionHandler)
+        
+        let timer: UIAlertAction = UIAlertAction(title: "Duration", style: .Destructive , handler:callActionHandler)
+        
+        actionSheet.addAction(moving)
+        actionSheet.addAction(sitting)
+        actionSheet.addAction(timer)
+        
+        presentViewController(actionSheet, animated: true, completion:nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
