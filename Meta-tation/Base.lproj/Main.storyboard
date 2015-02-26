@@ -65,9 +65,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradientBlue.png" translatesAutoresizingMaskIntoConstraints="NO" id="JPn-BP-qf1">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qnM-yB-quY">
-                                <rect key="frame" x="114" y="17" width="92" height="30"/>
-                                <state key="normal" title="Start Session">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qnM-yB-quY">
+                                <rect key="frame" x="114" y="17" width="90" height="30"/>
+                                <state key="normal" title="New Session">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -103,6 +103,11 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
+                    <connections>
+                        <outlet property="sessionButton" destination="qnM-yB-quY" id="poO-vX-7Mn"/>
+                        <outlet property="sessionTime" destination="7jL-G3-l6g" id="K5L-Fv-Qcd"/>
+                        <outlet property="sessionType" destination="6La-Bv-GxR" id="aEP-0o-SKo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ab1-yF-uXt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

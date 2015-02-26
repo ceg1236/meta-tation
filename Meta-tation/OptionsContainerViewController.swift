@@ -9,12 +9,47 @@
 import UIKit
 
 class OptionsContainerViewController: UIViewController {
-
+    
+    var readyToStart:Bool = false
+    
+    @IBOutlet var sessionTime: UIDatePicker!
+    @IBOutlet var sessionType: UISegmentedControl!
+    @IBOutlet var sessionButton: UIButton!
+    var timer:NSTimer = NSTimer()
+    var endTime: NSDate = NSDate()
+    
+    
+    
+    func updateCountdown() {
+        var value = round(endTime.timeIntervalSinceNow)
+        var text = Utils.countDownTextFromSeconds(Int(value))
+        println(text)
+    }
     @IBAction func expandOptionsContainer(sender: AnyObject) {
-        var parent = self.parentViewController as? ViewController
-        if parent != nil {
-            parent!.expandContainerToShowOptions()
+        
+        if readyToStart {
+            
+            println(self.sessionType.selectedSegmentIndex)
+            
+            
+            timer.invalidate()
+            timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateCountdown"), userInfo: nil, repeats: true)
+            var totalTime =  self.sessionTime.date
+            var comps: NSDateComponents = NSCalendar.currentCalendar().components((.CalendarUnitHour | .CalendarUnitMinute | .CalendarUnitSecond), fromDate: totalTime)
+            
+            self.endTime = NSDate().dateByAddingTimeInterval(NSTimeInterval(comps.hour*3600+comps.minute*60+comps.second))
+        
+            
+        } else {
+            sessionButton.setTitle("Start Session", forState: .Normal)
+            
+            var parent = self.parentViewController as? ViewController
+            if parent != nil {
+                parent!.expandContainerToShowOptions()
+            }
+            self.readyToStart = true
         }
+        
     }
     
     

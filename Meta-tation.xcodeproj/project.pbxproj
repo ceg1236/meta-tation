@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A329A5CE1A9EA4C6005EAD5B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A329A5CD1A9EA4C6005EAD5B /* Utils.swift */; };
 		A344DC191A93F59400D040F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A344DC181A93F59400D040F8 /* AppDelegate.swift */; };
 		A344DC1B1A93F59400D040F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A344DC1A1A93F59400D040F8 /* ViewController.swift */; };
 		A344DC1E1A93F59400D040F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A344DC1C1A93F59400D040F8 /* Main.storyboard */; };
@@ -15,7 +16,6 @@
 		A344DC2F1A93F59400D040F8 /* Meta_tationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A344DC2E1A93F59400D040F8 /* Meta_tationTests.swift */; };
 		A344DC391A93F5A800D040F8 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A344DC381A93F5A800D040F8 /* SwiftyJSON.swift */; };
 		A344DC6F1A95BC6B00D040F8 /* gradientBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = A344DC6E1A95BC6B00D040F8 /* gradientBlue.png */; };
-		A344DE4E1A9E5DFA00D040F8 /* CustomUIAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A344DE4D1A9E5DFA00D040F8 /* CustomUIAlertAction.swift */; };
 		A344DE501A9E650D00D040F8 /* OptionsContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A344DE4F1A9E650D00D040F8 /* OptionsContainerViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A329A5CD1A9EA4C6005EAD5B /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		A344DC131A93F59400D040F8 /* Meta-tation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meta-tation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A344DC171A93F59400D040F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A344DC181A93F59400D040F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,7 +43,6 @@
 		A344DC2E1A93F59400D040F8 /* Meta_tationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta_tationTests.swift; sourceTree = "<group>"; };
 		A344DC381A93F5A800D040F8 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		A344DC6E1A95BC6B00D040F8 /* gradientBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gradientBlue.png; path = ../../../../../Desktop/gradientBlue.png; sourceTree = "<group>"; };
-		A344DE4D1A9E5DFA00D040F8 /* CustomUIAlertAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUIAlertAction.swift; sourceTree = "<group>"; };
 		A344DE4F1A9E650D00D040F8 /* OptionsContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsContainerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,7 +87,6 @@
 			children = (
 				A344DC181A93F59400D040F8 /* AppDelegate.swift */,
 				A344DC1A1A93F59400D040F8 /* ViewController.swift */,
-				A344DE4D1A9E5DFA00D040F8 /* CustomUIAlertAction.swift */,
 				A344DC1C1A93F59400D040F8 /* Main.storyboard */,
 				A344DE4F1A9E650D00D040F8 /* OptionsContainerViewController.swift */,
 				A344DC381A93F5A800D040F8 /* SwiftyJSON.swift */,
@@ -95,6 +94,7 @@
 				A344DC1F1A93F59400D040F8 /* Images.xcassets */,
 				A344DC211A93F59400D040F8 /* LaunchScreen.xib */,
 				A344DC161A93F59400D040F8 /* Supporting Files */,
+				A329A5CD1A9EA4C6005EAD5B /* Utils.swift */,
 			);
 			path = "Meta-tation";
 			sourceTree = "<group>";
@@ -225,11 +225,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A329A5CE1A9EA4C6005EAD5B /* Utils.swift in Sources */,
 				A344DC391A93F5A800D040F8 /* SwiftyJSON.swift in Sources */,
 				A344DE501A9E650D00D040F8 /* OptionsContainerViewController.swift in Sources */,
 				A344DC1B1A93F59400D040F8 /* ViewController.swift in Sources */,
 				A344DC191A93F59400D040F8 /* AppDelegate.swift in Sources */,
-				A344DE4E1A9E5DFA00D040F8 /* CustomUIAlertAction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +421,7 @@
 				A344DC341A93F59400D040F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A344DC351A93F59400D040F8 /* Build configuration list for PBXNativeTarget "Meta-tationTests" */ = {
 			isa = XCConfigurationList;
@@ -429,6 +430,7 @@
 				A344DC371A93F59400D040F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
