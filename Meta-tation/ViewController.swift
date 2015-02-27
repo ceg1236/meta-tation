@@ -32,31 +32,57 @@ class ViewController: UIViewController, MKMapViewDelegate {
         // Snippet for extracting JSON with SwiftyJSON
         let url = NSURL(string: "http://localhost:8003/meditators")
         var request = NSURLRequest(URL: url!)
-        var data = NSURLConnection.sendSynchronousRequest(request, returningResponse: nil, error: nil)
-        if data != nil {
-            var hoge = JSON(data: data!)
-            println(hoge)
+        
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response, data, error) -> Void in
             
-            var latlng = hoge[0]["latlng"]
-            println(latlng)
-            
-            if latlng != nil {
-                lat = latlng[0].double!
-                lng = latlng[1].double!
+            if error != nil {
+                println(error)
+                Utils.alert("Whoops", text: "There's been an error connecting. Please try again, or simply use the timer without map data", controller: self)
                 
-                latDelta = 0.01
-                lngDelta = 0.01
-
             }
             
-            var span:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, lngDelta)
-            
-            var location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(lat, lng)
-            
-            var region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
-            
-            tsongaMap.setRegion(region, animated: true)
+            if data != nil {
+                var tsonga = JSON(data: data!)
+                println("StartFor")
+                for (index:String, session:JSON) in tsonga {
+                    
+                    var latlng = session["latlng"]
+                    
+                    if latlng != nil {
+                        var lat = latlng[0].double!
+                        var lng = latlng[1].double!
+
+                        var location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(lat,lng)
+                        
+                        println(location.latitude)
+                        
+                        var circle:MKCircle = MKCircle(centerCoordinate: location, radius: 20)
+                        self.tsongaMap.addOverlay(circle)
+                    }
+                }
+                
+
+            }
         }
+        
+        var span:MKCoordinateSpan = MKCoordinateSpanMake(self.latDelta, self.lngDelta)
+        
+        var location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(self.lat, self.lng)
+        
+        var region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+        self.tsongaMap.setRegion(region, animated: true)
+        
+    }
+    
+    // TODO: Read this are the changes I made:
+    // - instead of viewForOverlay from the delegate, I had to use rendererForOverlay method.
+    // - This allowed to create a MKCircleRenderer instead of a MKCircleView. The MKCircleRenderer does accept fillColor (i.e is not deprecated!)
+    // - We forgot to make ViewController the delegate for our map. (Fixed by ctrl-dragging the map view in the storyboard to the yellow ViewController circle and selecting "delegate")
+    
+    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
+        var circleView:MKCircleRenderer = MKCircleRenderer(overlay: overlay)
+        circleView.fillColor = UIColor.redColor()
+        return circleView
     }
     
     func expandContainerToShowOptions() {

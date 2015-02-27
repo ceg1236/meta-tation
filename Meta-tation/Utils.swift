@@ -34,4 +34,17 @@ class Utils {
         return res
         
     }
+    
+    class func alert(title:NSString, text:NSString, controller: UIViewController) {
+        
+        var alert = UIAlertController(title: title, message: text, preferredStyle: .Alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { action in
+            alert.dismissViewControllerAnimated(true, completion: nil)
+        }))
+        
+        controller.presentViewController(alert, animated: true, completion: nil)
+        
+    }
+
 }

@@ -19,6 +19,9 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lu5-Cn-RBy">
                                 <rect key="frame" x="1" y="35" width="318" height="473"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="psB-tf-Pqx"/>
+                                </connections>
                             </mapView>
                             <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ey0-Ty-YCs">
                                 <rect key="frame" x="0.0" y="268" width="320" height="300"/>
@@ -49,6 +52,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-205" y="541"/>
         </scene>
         <!--Options Container View Controller-->
         <scene sceneID="vlJ-LF-FHM">
@@ -87,6 +91,15 @@
                                     <!--2015-02-25 22:29:00 +0000-->
                                 </date>
                             </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUW-yU-ZzA">
+                                <rect key="frame" x="16" y="138" width="288" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="iCa-YB-QFg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -95,15 +108,19 @@
                             <constraint firstAttribute="trailing" secondItem="JPn-BP-qf1" secondAttribute="trailing" id="CSx-2E-6DV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qnM-yB-quY" secondAttribute="trailing" constant="98" id="Htl-f7-r4N"/>
                             <constraint firstItem="UKg-EH-RMG" firstAttribute="top" secondItem="JPn-BP-qf1" secondAttribute="bottom" id="QIZ-WL-rkB"/>
+                            <constraint firstItem="fUW-yU-ZzA" firstAttribute="trailing" secondItem="xPj-7c-EnS" secondAttribute="trailingMargin" id="ZKV-LW-y5t"/>
                             <constraint firstItem="6La-Bv-GxR" firstAttribute="trailing" secondItem="xPj-7c-EnS" secondAttribute="trailingMargin" id="bJG-2F-FSf"/>
                             <constraint firstItem="6La-Bv-GxR" firstAttribute="top" secondItem="qnM-yB-quY" secondAttribute="bottom" constant="50" id="dT6-ye-fSp"/>
+                            <constraint firstItem="UKg-EH-RMG" firstAttribute="top" secondItem="fUW-yU-ZzA" secondAttribute="bottom" id="hvP-qL-JSq"/>
                             <constraint firstItem="JPn-BP-qf1" firstAttribute="leading" secondItem="xPj-7c-EnS" secondAttribute="leading" id="jpw-eF-qTd"/>
                             <constraint firstItem="6La-Bv-GxR" firstAttribute="leading" secondItem="xPj-7c-EnS" secondAttribute="leadingMargin" id="kxd-jE-tck"/>
                             <constraint firstItem="qnM-yB-quY" firstAttribute="leading" secondItem="xPj-7c-EnS" secondAttribute="leadingMargin" constant="98" id="ky9-2H-snp"/>
+                            <constraint firstItem="fUW-yU-ZzA" firstAttribute="leading" secondItem="xPj-7c-EnS" secondAttribute="leadingMargin" id="mdA-jA-qXS"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <connections>
+                        <outlet property="countDownLabel" destination="fUW-yU-ZzA" id="WgJ-kv-7ye"/>
                         <outlet property="sessionButton" destination="qnM-yB-quY" id="poO-vX-7Mn"/>
                         <outlet property="sessionTime" destination="7jL-G3-l6g" id="K5L-Fv-Qcd"/>
                         <outlet property="sessionType" destination="6La-Bv-GxR" id="aEP-0o-SKo"/>
