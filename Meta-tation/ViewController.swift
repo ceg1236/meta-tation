@@ -28,42 +28,24 @@ class ViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         
         optionsContainerHeight.constant = 63
-        
-        // Snippet for extracting JSON with SwiftyJSON
-        let url = NSURL(string: "http://localhost:8003/meditators")
-        var request = NSURLRequest(URL: url!)
-        
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response, data, error) -> Void in
+             
+        var metaService = MetaService(urlString: "http://localhost:8003")
+        metaService.getMeditators({
+            (meditators) -> Void in
             
-            if error != nil {
-                println(error)
-                Utils.alert("Whoops", text: "There's been an error connecting. Please try again, or simply use the timer without map data", controller: self)
-                
+            if meditators == nil {
+                Utils.alert("Whoops", text: "Error connecting. Please try again, or simply use the timer without map data", controller: self)
             }
             
-            if data != nil {
-                var tsonga = JSON(data: data!)
-                println("StartFor")
-                for (index:String, session:JSON) in tsonga {
-                    
-                    var latlng = session["latlng"]
-                    
-                    if latlng != nil {
-                        var lat = latlng[0].double!
-                        var lng = latlng[1].double!
+            for meditator in meditators! {
 
-                        var location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(lat,lng)
-                        
-                        println(location.latitude)
-                        
-                        var circle:MKCircle = MKCircle(centerCoordinate: location, radius: 20)
-                        self.tsongaMap.addOverlay(circle)
-                    }
-                }
+                var location = meditator.getLocation()
+                var circle:MKCircle = MKCircle(centerCoordinate: location, radius: 20)
+                self.tsongaMap.addOverlay(circle)
                 
-
             }
-        }
+
+        })
         
         var span:MKCoordinateSpan = MKCoordinateSpanMake(self.latDelta, self.lngDelta)
         

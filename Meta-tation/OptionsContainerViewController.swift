@@ -10,9 +10,6 @@ import UIKit
 
 class OptionsContainerViewController: UIViewController {
     
-//    var readyToStart:Bool = false
-//    var readyToEnd:Bool = false
-    
     enum SessionState: Int {
         case Idle
         case ReadyToStart
@@ -34,6 +31,7 @@ class OptionsContainerViewController: UIViewController {
         Utils.alert("Session Finished", text: "Namaste", controller: self)
         self.sessionButton.setTitle("Start Session", forState: .Normal)
         self.sessionState = .ReadyToStart
+        // Util.deleteSession({()->Void in })
         
     }
     
@@ -41,7 +39,6 @@ class OptionsContainerViewController: UIViewController {
         var value = round(endTime.timeIntervalSinceNow)
         if value <= 0 {
             sessionEnd()
-//            value = 0
         }
         var text = Utils.countDownTextFromSeconds(Int(value))
         countDownLabel.text = text
@@ -55,8 +52,7 @@ class OptionsContainerViewController: UIViewController {
             
         } else if sessionState == .ReadyToStart {
             
-            println(self.sessionType.selectedSegmentIndex)
-            
+            MetaService(urlString:"http://localhost:8003")
             
             timer.invalidate()
             
@@ -83,7 +79,6 @@ class OptionsContainerViewController: UIViewController {
                 parent!.expandContainerToShowOptions()
             }
             self.sessionState = .ReadyToStart
-//            self.readyToStart = true
         }
         
     }
@@ -100,15 +95,5 @@ class OptionsContainerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
