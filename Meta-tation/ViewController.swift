@@ -27,6 +27,17 @@ class ViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//      Swipes
+        var swipeUp = UISwipeGestureRecognizer(target: self, action: "swiped:")
+        swipeUp.direction = UISwipeGestureRecognizerDirection.Up
+        self.view.addGestureRecognizer(swipeUp)
+        
+        var swipeDown = UISwipeGestureRecognizer(target: self, action: "swiped:")
+        swipeDown.direction = UISwipeGestureRecognizerDirection.Down
+        self.view.addGestureRecognizer(swipeDown)
+        
+        
+        
         optionsContainerHeight.constant = 63
              
         var metaService = MetaService(urlString: "http://localhost:8003")
@@ -56,7 +67,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
     }
     
-    // TODO: Read this are the changes I made:
+    // TODO: Read changes:
     // - instead of viewForOverlay from the delegate, I had to use rendererForOverlay method.
     // - This allowed to create a MKCircleRenderer instead of a MKCircleView. The MKCircleRenderer does accept fillColor (i.e is not deprecated!)
     // - We forgot to make ViewController the delegate for our map. (Fixed by ctrl-dragging the map view in the storyboard to the yellow ViewController circle and selecting "delegate")
@@ -68,11 +79,39 @@ class ViewController: UIViewController, MKMapViewDelegate {
     }
     
     func expandContainerToShowOptions() {
-        println("Expanding")
+
         self.optionsContainerHeight.constant = 300
+        
         UIView.animateWithDuration(0.4, delay: 0.0, options: .CurveEaseOut, animations: {
             self.view.layoutIfNeeded()
-        }, completion: nil) // Maybe do a little fun animation on complete
+        }, completion: nil)
+        
+        // Maybe do a little fun animation on complete
+    }
+    
+    func closeContainer() {
+        self.optionsContainerHeight.constant = 63
+        
+        UIView.animateWithDuration(0.4, delay:0.0, options: .CurveEaseOut,
+            animations: {
+                self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+    
+    func swiped(gesture:UIGestureRecognizer) {
+        
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            switch swipeGesture.direction {
+                
+            case UISwipeGestureRecognizerDirection.Down:
+                self.closeContainer()
+                break
+            case UISwipeGestureRecognizerDirection.Up:
+                self.expandContainerToShowOptions()
+            default:
+                break
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {

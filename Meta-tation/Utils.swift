@@ -47,4 +47,21 @@ class Utils {
         
     }
 
+    
+//    class func swiped(gesture:UIGestureRecognizer) {
+//        
+//        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+//            switch swipeGesture.direction {
+//                
+//            case UISwipeGestureRecognizerDirection.Down:
+//                println("swiped down")
+//                break
+//            case UISwipeGestureRecognizerDirection.Up:
+//                println("UPP")
+//            default:
+//                break
+//            }
+//        }
+//    }
+
 }

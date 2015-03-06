@@ -20,6 +20,8 @@ class MetaService {
             println("shaking hands")
             println(user.id)
             
+            user.hasHandshaked()
+            
         }))
     }
 
@@ -66,6 +68,39 @@ class MetaService {
             }
 
         })
+    }
+    
+    func postSession(user: User, handler: (User) -> Void) {
+        
+        var hasHandshaked = user.hasHandshaked()
+        println(hasHandshaked)
+        
+//        if hasHandshaked != nil {
+        
+            var routeString: String = urlString + "/api/sessions/"
+            let url = NSURL(string: routeString)
+            var request = NSMutableURLRequest(URL: url!)
+            
+            request.HTTPMethod = "POST"
+            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response, data, error) -> Void in
+                
+                if error != nil {
+                    println("Error in posting a session")
+                    return
+                }
+                
+                if data != nil {
+                    println("fresh POST data here")
+                    println(data)
+                    handler(user)
+                    
+                }
+            }
+//        } else {
+//            println("User did not introduce himself before POSTing")
+//        }
+        
+    
     }
     
     

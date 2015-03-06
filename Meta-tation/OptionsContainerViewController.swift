@@ -52,7 +52,9 @@ class OptionsContainerViewController: UIViewController {
             
         } else if sessionState == .ReadyToStart {
             
-            MetaService(urlString:"http://localhost:8003")
+            var metaService = MetaService(urlString:"http://localhost:8003")
+            
+//            metaService.postSession(<#user: User#>, handler: <#(User) -> Void##(User) -> Void#>)
             
             timer.invalidate()
             
