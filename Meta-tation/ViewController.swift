@@ -12,6 +12,7 @@ import MapKit
 
 class ViewController: UIViewController, MKMapViewDelegate {
     
+    
     @IBOutlet var tsongaMap: MKMapView!
 
 
@@ -46,6 +47,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
             
             if meditators == nil {
                 Utils.alert("Whoops", text: "Error connecting. Please try again, or simply use the timer without map data", controller: self)
+                return;
             }
             
             for meditator in meditators! {
@@ -85,6 +87,8 @@ class ViewController: UIViewController, MKMapViewDelegate {
         UIView.animateWithDuration(0.4, delay: 0.0, options: .CurveEaseOut, animations: {
             self.view.layoutIfNeeded()
         }, completion: nil)
+        
+        
         
         // Maybe do a little fun animation on complete
     }

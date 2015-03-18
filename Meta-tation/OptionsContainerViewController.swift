@@ -31,6 +31,7 @@ class OptionsContainerViewController: UIViewController {
         self.countDownLabel.hidden = true
         self.sessionTime.hidden = false
         Utils.alert("Session Finished", text: "Namaste", controller: self)
+        Utils.localNotification("Session Finished", text: "Namaste", controller:self)
         self.sessionButton.setTitle("Start Session", forState: .Normal)
         self.sessionState = .ReadyToStart
         
@@ -44,11 +45,7 @@ class OptionsContainerViewController: UIViewController {
         var value = round(endTime.timeIntervalSinceNow)
         if value <= 0 {
             sessionEnd()
-            var localNotification:UILocalNotification = UILocalNotification()
-            localNotification.alertAction = "Session Finished"
-            localNotification.alertBody = "Namaste"
-            localNotification.fireDate = NSDate(timeIntervalSinceNow: 0)
-            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+
         }
         var text = Utils.countDownTextFromSeconds(Int(value))
         countDownLabel.text = text

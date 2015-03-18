@@ -46,22 +46,15 @@ class Utils {
         controller.presentViewController(alert, animated: true, completion: nil)
         
     }
-
     
-//    class func swiped(gesture:UIGestureRecognizer) {
-//        
-//        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
-//            switch swipeGesture.direction {
-//                
-//            case UISwipeGestureRecognizerDirection.Down:
-//                println("swiped down")
-//                break
-//            case UISwipeGestureRecognizerDirection.Up:
-//                println("UPP")
-//            default:
-//                break
-//            }
-//        }
-//    }
+    class func localNotification(title:NSString, text:NSString, controller:UIViewController) {
+        
+        var localNotification:UILocalNotification = UILocalNotification()
+        localNotification.alertAction = title
+        localNotification.alertBody = text
+        localNotification.fireDate = NSDate(timeIntervalSinceNow: 0)
+        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+        
+    }
 
 }
