@@ -24,6 +24,8 @@ class OptionsContainerViewController: UIViewController {
     var timer:NSTimer = NSTimer()
     var endTime: NSDate = NSDate()
     
+    
+    
     func sessionEnd() {
         timer.invalidate()
         self.countDownLabel.hidden = true
@@ -31,14 +33,22 @@ class OptionsContainerViewController: UIViewController {
         Utils.alert("Session Finished", text: "Namaste", controller: self)
         self.sessionButton.setTitle("Start Session", forState: .Normal)
         self.sessionState = .ReadyToStart
+        
+        
         // Util.deleteSession({()->Void in })
         
     }
+    
     
     func updateCountdown() {
         var value = round(endTime.timeIntervalSinceNow)
         if value <= 0 {
             sessionEnd()
+            var localNotification:UILocalNotification = UILocalNotification()
+            localNotification.alertAction = "Session Finished"
+            localNotification.alertBody = "Namaste"
+            localNotification.fireDate = NSDate(timeIntervalSinceNow: 0)
+            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
         }
         var text = Utils.countDownTextFromSeconds(Int(value))
         countDownLabel.text = text
@@ -90,6 +100,7 @@ class OptionsContainerViewController: UIViewController {
         super.viewDidLoad()
         self.countDownLabel.hidden = true
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
