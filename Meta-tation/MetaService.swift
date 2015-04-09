@@ -8,10 +8,25 @@
 
 import UIKit
 
+var metaService: MetaService?
+
 class MetaService {
-    let urlString:String
+
+//  Singleton pattern
     
-    init(urlString:String){
+    class func getInstance() -> MetaService {
+        if !(metaService != nil) {
+            metaService = MetaService(urlString:"http://localhost:8003")
+        }
+        
+        return metaService!
+    }
+    
+    let urlString:String
+
+    var user:User?
+    
+    private init(urlString:String){
         self.urlString = urlString
         
         handshake(User(), handler:({
@@ -20,9 +35,30 @@ class MetaService {
             println("shaking hands")
             println(user.id)
             
-            user.hasHandshaked()
-            
+            self.user = user
         }))
+    }
+    
+    private func handshake(user: User, handler: (User) -> Void) {
+        
+        var routeString:String = urlString + "/api/handshake"
+        let url = NSURL(string: routeString)
+        var request = NSMutableURLRequest(URL: url!)
+        
+        request.HTTPMethod = "POST"
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), { (response, data, error) -> Void in
+            
+            if error != nil {
+                println("Something went wrong with the handshake")
+                return
+            }
+            
+            if data != nil {
+                println(JSON(data: data!))
+                handler(User(fromJson:JSON(data: data!)))
+            }
+            
+        })
     }
 
     func getMeditators(handler: ([Meditator]?) -> Void) {
@@ -48,35 +84,11 @@ class MetaService {
         })
     }
     
-    private func handshake(user: User, handler: (User) -> Void) {
-        
-        var routeString:String = urlString + "/api/handshake"
-        let url = NSURL(string: routeString)
-        var request = NSMutableURLRequest(URL: url!)
-        
-        request.HTTPMethod = "POST"
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), { (response, data, error) -> Void in
-            
-            if error != nil {
-                println("Something went wrong with the handshake")
-                return
-            }
-            
-            if data != nil {
-                println(JSON(data: data!))
-                handler(User(fromJson:JSON(data: data!)))
-            }
-
-        })
-    }
     
-    func postSession(user: User, handler: (User) -> Void) {
-        
-        var hasHandshaked = user.hasHandshaked()
-        println(hasHandshaked)
-        
-//        if hasHandshaked != nil {
-        
+    func postSession(handler: (User?) -> Void) {
+        println("start POSTing")
+        if self.user != nil {
+            
             var routeString: String = urlString + "/api/sessions/"
             let url = NSURL(string: routeString)
             var request = NSMutableURLRequest(URL: url!)
@@ -84,25 +96,31 @@ class MetaService {
             request.HTTPMethod = "POST"
             NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response, data, error) -> Void in
                 
+                var casted = response as NSHTTPURLResponse
+                
                 if error != nil {
                     println("Error in posting a session")
+                    println(error)
                     return
                 }
                 
                 if data != nil {
                     println("fresh POST data here")
-                    println(data)
-                    handler(user)
+                    println(casted.statusCode)
+                    
+                    if casted.statusCode >= 300 {
+                        println("Status code \(casted.statusCode)")
+                        handler(nil)
+                    } else {
+                        handler(self.user?)
+                    }
                     
                 }
+
             }
-//        } else {
-//            println("User did not introduce himself before POSTing")
-//        }
-        
-    
+        } else {
+            println("User did not introduce himself before POSTing")
+        }
     }
-    
-    
 }
 

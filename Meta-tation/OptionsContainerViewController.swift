@@ -59,9 +59,15 @@ class OptionsContainerViewController: UIViewController {
             
         } else if sessionState == .ReadyToStart {
             
-            var metaService = MetaService(urlString:"http://localhost:8003")
             
-//            metaService.postSession(<#user: User#>, handler: <#(User) -> Void##(User) -> Void#>)
+            metaService!.postSession({ (user) -> Void in
+                if user != nil {
+                    Utils.alert("Post", text: "Session", controller: self)
+                } else {
+                     Utils.alert("Error with Server!", text: "Please try again or use the timer without connection" , controller: self)
+                }
+                
+            })
             
             timer.invalidate()
             
@@ -96,6 +102,7 @@ class OptionsContainerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.countDownLabel.hidden = true
+        
         // Do any additional setup after loading the view.
         
     }

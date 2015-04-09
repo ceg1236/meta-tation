@@ -41,7 +41,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
         optionsContainerHeight.constant = 63
              
-        var metaService = MetaService(urlString: "http://localhost:8003")
+        var metaService = MetaService.getInstance()
         metaService.getMeditators({
             (meditators) -> Void in
             
@@ -122,7 +122,6 @@ class ViewController: UIViewController, MKMapViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
 }
 

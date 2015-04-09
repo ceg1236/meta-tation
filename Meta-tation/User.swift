@@ -28,8 +28,5 @@ class User {
         return ["id":"\(self.id)"]
     }
     
-    func hasHandshaked() -> Bool {
-        return self.id != nil
-    }
     
 }
